@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<style>
+    body{
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+        background: #2b2b2b;
+        font-family:"Century Gothic" ;
+        font-size: 25px;
+        padding: 100px 100px 10px 100px;
+        color: #fff906;
+    }
+    #text-form-field-text{
+        margin: auto;
+        padding: 10px 10px 10px 10px;
+        width: 100%;
+        height: 300px;
+        background: #565356;
+        color: white;
+        font-size: 15px;
+        border: 1px solid #2b2b2b;
+        box-shadow: 0 1px rgba(255,255,255,.2) inset, 0 3px 5px rgba(0,1,6,.5), 0 0 1px 1px rgba(0,1,6,.2);
+
+    }
+    .button_block{
+        display: flex;
+        justify-content: flex-end;
+
+    }
+    #button{
+        position: relative;
+        display: inline-block;
+        font-size: 90%;
+        font-weight: 700;
+        color: rgb(209,209,217);
+        text-decoration: none;
+        text-shadow: 0 -1px 2px rgba(0,0,0,.2);
+        padding: .5em 1em;
+        outline: none;
+        border-radius: 3px;
+        border: 1px solid #2b2b2b;
+        background: linear-gradient(rgb(110,112,120), rgb(81,81,86)) rgb(110,112,120);
+        box-shadow: 0 1px rgba(255,255,255,.2) inset, 0 3px 5px rgba(0,1,6,.5), 0 0 1px 1px rgba(0,1,6,.2);
+        transition: .2s ease-in-out;
+        margin-right: -23px;
+        }
+    #button:hover:not(:active) {
+        background: linear-gradient(rgb(126,126,134), rgb(70,71,76)) rgb(126,126,134);
+        }
+    #button:active {
+        top: 1px;
+        background: linear-gradient(rgb(76,77,82), rgb(56,57,62)) rgb(76,77,82);
+        box-shadow:
+        0 0 1px rgba(0,0,0,.5) inset,
+        0 2px 3px rgba(0,0,0,.5) inset,
+        0 1px 1px rgba(255,255,255,.1);
+    }
+
+</style>
+<body>
+<div class="text_form_field">
+    <form action="#" id="content" method="post">
+        {% csrf_token %}
+    </form>
+</div>
+<div>
+    <label for='text-form-field-text'>
+        <b>Можешь что-нибудь написать, если прям надо</b>
+    </label>
+    <textarea id = "text-form-field-text" form="content" name = "content" ></textarea>
+    <div class="button_block">
+        <input id="button" form='content' type="submit" value="Analyze">
+    </div>
+</div>
+
+</body>
+</html>
