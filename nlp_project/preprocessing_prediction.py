@@ -28,9 +28,6 @@ def prepr_pred():
         model = nlp_imdb_learn()
         pred_cl = model.predict_classes(np.array(padded_seq))
         pred = model.predict(np.array(padded_seq))
-        # pred_cl = model.predict_classes(np.array(padded_seq))
-        # pred = model.predict(np.array(padded_seq))
-
         middle_acc_cl = pred_cl.mean()
         middle_acc = pred.mean()*100
         middle_acc = int(middle_acc)
