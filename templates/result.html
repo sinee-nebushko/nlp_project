@@ -4,7 +4,53 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
+<style>
+    body{
+        min-height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: stretch;
+        align-items: stretch;
+        background: #2b2b2b;
+        font-family:"Century Gothic" ;
+        font-size: 25px;
+        padding: 100px 100px 10px 100px;
+        color: #fff906;
+    }
+
+    p em{
+        color: white;
+        font-size: 20px;
+    }
+    hr{
+        display: block;
+        height: 1px;
+        border: 0;
+        border-top: 2px solid #fff906;
+        margin: 1px 0;
+        padding: 0;
+
+    }
+    #text{
+        color: white;
+        font-size: 20px;
+    }
+    #result{
+        font-size: 40px;
+    }
+
+</style>
 <body>
-result
+<div id="result">
+    RESULT
+</div>
+<hr/>
+<div id="result-container">
+     <p>Polarity:    <em>{{ polarity }}</em> </p>
+    <p>Accuracy:    <em> {{ accuracy }}%</em></p>
+     <div id = "text-cont">Original text:
+         <div id="text">{{ text }}</div>
+     </div>
+</div>
 </body>
 </html>

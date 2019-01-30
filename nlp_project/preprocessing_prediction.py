@@ -1,6 +1,6 @@
 from keras.preprocessing.sequence import pad_sequences
 from keras.preprocessing.text import Tokenizer
-from nlp_сnn import model
+from nlp_сnn import nlp_imdb_learn
 import numpy as np
 import re
 
@@ -16,27 +16,30 @@ def clean_text(text):
     return text
 
 
-with open('text.txt', 'r', encoding='utf-8') as f:
-    t = f.read()
-    text = clean_text(t)
-    tokenizer = Tokenizer(num_words=100)
-    tokenizer.fit_on_texts(text)
+def prepr_pred():
+    with open(r'nlp_project\text.txt', 'r', encoding='utf-8') as f:
+        t = f.read()
+        text = clean_text(t)
+        tokenizer = Tokenizer(num_words=100)
+        tokenizer.fit_on_texts(text)
 
-    sequences = tokenizer.texts_to_sequences(text)
-    padded_seq = pad_sequences(sequences, maxlen=280)
-    pred_cl = model.predict_classes(np.array(padded_seq))
-    pred = model.predict(np.array(padded_seq))
+        sequences = tokenizer.texts_to_sequences(text)
+        padded_seq = pad_sequences(sequences, maxlen=280)
+        model = nlp_imdb_learn()
+        pred_cl = model.predict_classes(np.array(padded_seq))
+        pred = model.predict(np.array(padded_seq))
+        # pred_cl = model.predict_classes(np.array(padded_seq))
+        # pred = model.predict(np.array(padded_seq))
 
-    middle_acc_cl = pred_cl.mean()
-    middle_acc = pred.mean()*100
-    if middle_acc_cl > 0.4:
-        a = 'Positive'
-    else:
-        a = 'Negative'
+        middle_acc_cl = pred_cl.mean()
+        middle_acc = pred.mean()*100
+        middle_acc = int(middle_acc)
+        if middle_acc_cl > 0.3:
+            a = 'Positive'
+        else:
+            a = 'Negative'
 
-    print('Polarity : ', a)
-    print('Accuracy:  %.5f' % middle_acc, '%')
-    print(t)
+    return a, middle_acc, t
 
 
 
