@@ -11,40 +11,43 @@
         flex-direction: column;
         justify-content: stretch;
         align-items: stretch;
-        background: #2b2b2b;
-        font-family:"Century Gothic" ;
-        font-size: 25px;
-        padding: 100px 100px 10px 100px;
-        color: #fff906;
+        width: unset !important;
+        margin: 80px 40% 0 120px;
+        background: linear-gradient(to right, #7c6867 65% , transparent 65%);
     }
 
+    #result{
+        color: white;
+        padding: 0 ;
+        margin: 0 ;
+        font-family: "Century Gothic";
+        font-weight: 700;
+        font-size: 450%;
+
+    }
+    #result-container{
+        font-size: 150%;
+        color: #f1e3e2;
+        font-family: "Century Gothic";
+        font-weight: 500;
+    }
     p em{
         color: white;
         font-size: 20px;
     }
-    hr{
-        display: block;
-        height: 1px;
-        border: 0;
-        border-top: 2px solid #fff906;
-        margin: 1px 0;
-        padding: 0;
 
-    }
     #text{
         color: white;
         font-size: 20px;
     }
-    #result{
-        font-size: 40px;
-    }
 
 </style>
 <body>
-<div id="result">
-    RESULT
+<div id="header">
+    <div id="result">
+        Result
+    </div>
 </div>
-<hr/>
 <div id="result-container">
      <p>Polarity:    <em>{{ polarity }}</em> </p>
     <p>Accuracy:    <em> {{ accuracy }}%</em></p>
