@@ -40,6 +40,32 @@
         color: white;
         font-size: 20px;
     }
+    .button_block{
+
+        display: flex;
+        justify-content: flex-end;
+
+    }
+        #button{
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        right: 0 ;
+        font-size: 200%;
+        font-weight: 700;
+        font-family: "Century Gothic";
+        color: rgb(199, 167, 166);
+        text-decoration: none;
+
+        margin-top: -10px;
+    }
+    #button:hover:not(:active) {
+        color: rgb(245, 228, 182);
+    }
+
+    #button:active {
+        color: rgb(199, 167, 166);
+    }
 
 </style>
 <body>
@@ -54,6 +80,9 @@
      <div id = "text-cont">Original text:
          <div id="text">{{ text }}</div>
      </div>
+</div>
+<div class="button_block">
+    <input id="button" type="button" onclick="history.back()" value="Return to analyze" >
 </div>
 </body>
 </html>
