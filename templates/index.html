@@ -13,7 +13,7 @@
         align-items: stretch;
         width: unset !important;
         margin: 20px 120px 0 120px;
-        background: linear-gradient(to right, #7c6867 45% , transparent 45%);
+        background: linear-gradient(to right, #9c666d 45% , transparent 45%);
         margin-top: 50px;
     }
 
@@ -22,14 +22,15 @@
         left: 0;
         color: white;
         padding: 0 0 0 0 ;
-        font-size: 230%;
+        font-size: 200%;
         font-family: "Century Gothic";
         font-weight: 700;
         justify-content: stretch;
         align-items: stretch;
     }
     #annotation{
-        font-size: 15px;
+        font-size: 20px;
+        font-weight: 200;
         color: #ffffff;
         font-family: "Century Gothic";
     }
@@ -38,6 +39,7 @@
         width: auto;
         height:300px;
         background: #f1e3e2;
+        outline: none;
         color: #353535;
         font-size: 20px;
         border: 1px solid #dfe0da;
@@ -59,20 +61,20 @@
         border: none;
         background-color: transparent;
         right: 0 ;
-        font-size: 290%;
+        font-size: 190%;
         font-weight: 700;
         font-family: "Century Gothic";
-        color: rgb(124, 104, 103);
+        color: rgb(156, 102, 109);
         text-decoration: none;
 
-        margin-top: -10px;
+        margin-top: 0;
     }
     #button:hover:not(:active) {
-        color: rgb(150, 126, 125);
+        color: rgb(200, 134, 142);
     }
 
     #button:active {
-        color: rgb(199, 167, 166);
+        color: rgb(133, 87, 93);
     }
 
 
@@ -87,19 +89,19 @@
 
 <div id="header">
     <div id="header-content">
-        Sentiment analyzer
+        Экспертная система
     </div>
 </div>
 <div id="annotation">
-    <p>тут будет  маленькое описание</p>
-    <p>тут будет  маленькое описание</p>
+    <p>Определение лингвистического значения </p>
+    <p>слова "ХВОСТ" в русском предложении</p>
 </div>
 
 <label for='text-form-field-text'>
 </label>
 <textarea id = "text-form-field-text" form="content" name = "content" ></textarea>
 <div class="button_block">
-    <input id="button" form='content' type="submit" value="Analyze" >
+    <input id="button" form='content' type="submit" value="Определить значение" >
 </div>
 
 

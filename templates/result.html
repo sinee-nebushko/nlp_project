@@ -12,8 +12,8 @@
         justify-content: stretch;
         align-items: stretch;
         width: unset;
-        margin: 80px 37% 80px 80px;
-        background: linear-gradient(to right, #7c6867 65% , transparent 65%);
+        margin: 20px 37% 80px 80px;
+        background: linear-gradient(to right, #9c666d 65% , transparent 65%);
     }
 
     #result{
@@ -34,7 +34,7 @@
     }
     p em{
         color: white;
-        font-size: 20px;
+        font-size: 25px;
     }
 
     #text{
@@ -55,7 +55,7 @@
         font-family: "Century Gothic";
         color: rgb(199, 167, 166);
         text-decoration: none;
-        margin-top: 180px;
+        margin-top: 10px;
     }
     #button:hover:not(:active) {
         color: rgb(245, 228, 182);
@@ -69,18 +69,21 @@
 <body>
 <div id="header">
     <div id="result">
-        Result
+        Результат
     </div>
 </div>
 <div id="result-container">
-     <p>Polarity:    <em>{{ polarity }}</em> </p>
-    <p>Accuracy:    <em> {{ accuracy }}%</em></p>
-     <div id = "text-cont">Original text:
+     <p>Значение слова "хвост":    <em> {{ result }}</em></p>
+     <p>Аргументация: </p>
+         {% for argument in arguments %}
+             <p><em>В предложении {{argument}}</em></p>
+         {% endfor %}
+     <div id = "text-cont">Предложение, в котором происходил поиск:
          <div id="text">{{ text }}</div>
      </div>
 </div>
 <div class="button_block">
-    <input id="button" type="button" onclick="history.back()" value="Return to analyze" >
+    <input id="button" type="button" onclick="history.back()" value="Повторить анализ" >
 </div>
 </body>
 </html>
