@@ -4,6 +4,7 @@ from keras.layers.embeddings import Embedding
 from keras.preprocessing import sequence
 from keras.layers import LSTM, Dense, Conv1D, MaxPooling1D
 import tensorflow
+
 max_review_length = 280
 (x_train, y_train), (x_test, y_test) = imdb.load_data(num_words=10000, start_char=1, index_from=3)
 index = imdb.get_word_index()
@@ -25,6 +26,3 @@ graph = tensorflow.get_default_graph()
 # model.summary()
 # scores = model.evaluate(X_test, y_test, verbose=0)
 # print('Accuracy: %.2f' % (scores[1]*100))
-
-
-

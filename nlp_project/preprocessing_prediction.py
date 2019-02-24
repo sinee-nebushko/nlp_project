@@ -36,11 +36,11 @@ def prepr_pred(text):
     middle_acc = int(pred.mean()*100)
     if middle_acc > 50:
         a = 'Positive'
-        middle_acc = middle_acc
+        m_a = middle_acc
     else:
         a = 'Negative'
-        middle_acc = 100-middle_acc
-    return a, middle_acc
+        m_a = 100-middle_acc
+    return a, m_a
 
 
 
