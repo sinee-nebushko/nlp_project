@@ -1,12 +1,12 @@
 from django.shortcuts import render
-from preprocessing_prediction import prepr_pred
+from mn_sl import sem_analyze
 
 
 def index(request):
     if request.method == 'POST':
         content: str = request.POST['content']
-        cont = prepr_pred(content)
-        context = {'polarity': cont[0], 'accuracy': cont[1], 'text': content}
+        result = sem_analyze(content)
+        context = {'result': result[1], 'arguments': result[0], 'text': content}
         return render(request, 'result.html', context)
 
     else:
